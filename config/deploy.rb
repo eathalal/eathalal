@@ -3,7 +3,7 @@ require "bundler/capistrano"
 server "halalmeat.co:3264", :web, :app, :db, primary: true
 
 set :application, "eathalal"
-set :user, "deployer"
+set :user, "eathalal"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
