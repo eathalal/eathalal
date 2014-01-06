@@ -12,7 +12,7 @@ body#static_pages {
 	
 	&.welcome {
 
-		background-image: url(texture.jpg);
+		background-image: url(image_path('texture.jpg'));
 
 		> .container {
 			background-image: url(image_path('welcome.png'));
