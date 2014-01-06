@@ -15,9 +15,24 @@
 @import "custom-variables";
 @import "bootstrap";
 
+
+html, body {
+  height: 100%;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -60px;
+  padding: 0 0 60px;
+}
+
+#footer {
+  height: 60px;
+}
+
 body {
 	> footer {
-	margin-top: 30px;
     background-color: $branding-dark-pink;
     border-top: 1px solid $branding-light-pink;
   }

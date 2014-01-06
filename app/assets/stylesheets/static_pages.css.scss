@@ -14,7 +14,7 @@ body#static_pages {
 
 		background-image: url(image_path('texture.jpg'));
 
-		> .container {
+		#wrap > .container {
 			background-image: url(image_path('welcome.png'));
 			background-repeat: no-repeat;
 			background-position: 50% 10%;

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
   <title><%= yield(:title) %> | Eat Halal Ltd</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,12 +14,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body id="<%= controller_name %>" class="<%= action_name %>">
+  <div id="wrap">
+    <div class="container">
+      <%= yield %>
+    </div>
+  </div>
 
-<div class="container">
-  <%= yield %>
-</div>
-
-<footer>
+<footer id="footer">
   <div class="container">
     <p><span class="glyphicon glyphicon-copyright-mark"></span> Copyright 2014 - Eat Halal Ltd</p>
   </div>
