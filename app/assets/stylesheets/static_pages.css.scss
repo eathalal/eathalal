@@ -12,10 +12,10 @@ body#static_pages {
 	
 	&.welcome {
 
-		background-image: url(assets/texture.jpg);
+		background-image: url(texture.jpg);
 
 		> .container {
-			background-image: url(assets/welcome.png);
+			background-image: url(image_path('welcome.png'));
 			background-repeat: no-repeat;
 			background-position: 50% 10%;
 
