@@ -9,5 +9,18 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
  */
+
+@import "bootstrap-variables";
+@import "custom-variables";
+@import "bootstrap";
+
+body {
+	> footer {
+	margin-top: 30px;
+    background-color: $branding-dark-pink;
+    border-top: 1px solid $branding-light-pink;
+  }
+}
+
+@import "static_pages";

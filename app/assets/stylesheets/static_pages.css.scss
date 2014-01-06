@@ -1,3 +1,55 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body#static_pages {
+
+	.hmc-logo {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
+	
+	&.welcome {
+
+		background-image: url(texture.jpg);
+
+		> .container {
+			background-image: url(welcome.png);
+			background-repeat: no-repeat;
+			background-position: 50% 10%;
+
+			h2 {
+				padding-top: 150px;
+			}
+
+			div.row {
+				color: $branding-green;
+
+				span {
+					color: darken($branding-green, 5%);
+				}
+			}
+
+			div.row:first-of-type {
+				color: $branding-pink;
+
+				span {
+					color: $branding-dark-pink;
+				}
+			}
+
+			p {
+				text-align: center;
+				font-size: 115%;
+			}
+		}
+
+		footer {
+			padding: 10px 0;
+			color: #f5f5f5;
+		}
+
+	}
+
+}
