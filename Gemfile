@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 1.2'
 # Authentication, registration and so on.
 gem 'devise'
 
+gem 'simple_form', github: 'plataformatec/simple_form'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
