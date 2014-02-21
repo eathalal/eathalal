@@ -11,7 +11,7 @@ describe "Static pages" do
 
 		it "should have the right title" do
 			visit root_path
-			expect(page).to have_title("Ahlan wa Sahlan | Eat Halal Ltd")
+			expect(page).to have_title("Eat Halal | Ahlan wa Sahlan")
 		end
 
   end
