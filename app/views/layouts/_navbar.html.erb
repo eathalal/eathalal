@@ -1,0 +1,34 @@
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      <li<%=  params['controller'] == 'categories' && action_name == 'index' ? ' class="active"'.html_safe : '' %>>
+        <%= link_to '<span class="glyphicon glyphicon-home"></span>'.html_safe, root_path %>
+      </li>
+      <li<%=  params['controller'] == 'posts' ? ' class="active"'.html_safe : '' %>>
+        <%#= link_to "On The Block", blog_path %>
+      </li>
+      
+    </ul>
+    <% unless user_signed_in? %>
+      <%= link_to("Sign up", new_user_registration_path, class: "navbar-right btn btn-primary navbar-btn signup") %>
+      <%= link_to("Sign in", new_user_session_path, class: "navbar-right btn btn-default navbar-btn signin") %>
+    <% else %>
+      <%= link_to('Sign out', destroy_user_session_path, :method => :delete, class: "navbar-right btn btn-default navbar-btn") %>
+    <% end %>
+    
+    <p class="navbar-right navbar-text">
+      As Salaam Alaykum wa Rahmatullahi wa Barakatuhu<%= content_tag(:strong, " #{current_user.email}") if user_signed_in? %>!
+    </p>
+  </div><!-- /.navbar-collapse -->
+</nav>

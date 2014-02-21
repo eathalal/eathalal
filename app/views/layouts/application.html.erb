@@ -1,32 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="utf-8">
-  <title><%= yield(:title) %> | Eat Halal Ltd</title>
+  <title><%= full_title(yield(:title)) %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
-		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
-  <![endif]-->
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
+  <![endif]-->
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body id="<%= controller_name %>" class="<%= action_name %>">
-  <div id="wrap">
-    <div class="container">
-      <% flash.each do |key, value| %>
-        <%= content_tag(:div, value, class: "alert alert-#{key}") %>
-      <% end %>
-      <%= yield %>
+<body id="<%= controller_name %>">
+
+<%= render "layouts/navbar" %>  
+
+<header class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <%= link_to image_tag("logo.png"), root_url %>
+    </div>
+    <div class="col-sm-6">
+      <%= render "layouts/section_nav" %>    
     </div>
   </div>
+  
+</header>
 
-<footer id="footer">
+<div class="container">
+  <% flash.each do |key, value| %> 
+    <%= content_tag(:div, raw(value + ' <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+'), class: "alert alert-#{key}") %> 
+  <% end %>  
+</div>
+
+<%= render "layouts/jumbotron" %>
+
+<div id="wrapper" class="container">
+
+  <main id="content" role="main" class="col-sm-9">
+    <%= yield %>
+  </main>
+
+  <% unless current_page?(root_url) %>
+    <div id="sidebar" class="col-sm-3">
+      <%= content_for :sidebar %>
+    </div>
+  <% end %>
+
+</div>
+
+<div id="social">
   <div class="container">
-    <p><span class="glyphicon glyphicon-copyright-mark"></span> Copyright 2014 - Eat Halal Ltd</p>
+    <div class="col-sm-4">
+      <i class="icon-twitter"></i>
+    </div>
+    <div class="col-sm-4">
+      <i class="icon-facebook"></i>
+    </div>
+    <div class="col-sm-4">
+      <i class="icon-google-plus"></i>
+    </div>
   </div>
+</div>
+
+<footer>
+  
 </footer>
 
 </body>
