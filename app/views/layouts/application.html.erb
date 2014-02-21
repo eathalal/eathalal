@@ -12,6 +12,23 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
+
+<% if current_page?(root_url) %>
+  <body id="<%= controller_name %>" class="<%= action_name %>">
+  <div id="wrap">
+    <div class="container">
+      <%= yield %>
+    </div>
+  </div>
+
+<footer id="footer">
+  <div class="container">
+    <p><span class="glyphicon glyphicon-copyright-mark"></span> Copyright 2014 - Eat Halal Ltd</p>
+  </div>
+</footer>
+
+</body>
+<% else %>
 <body id="<%= controller_name %>">
 
 <%= render "layouts/navbar" %>  
@@ -35,7 +52,7 @@
   <% end %>  
 </div>
 
-<%= render "layouts/jumbotron" %>
+<%= render "layouts/jumbotron" unless current_page?(root_url) %>
 
 <div id="wrapper" class="container">
 
@@ -70,4 +87,8 @@
 </footer>
 
 </body>
+<% end %>
+
+
+
 </html>
