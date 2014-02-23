@@ -55,6 +55,7 @@ body {
   background-color: #fff;
 
   > header {
+    height: 50px;
     margin-bottom: 20px;
   }
 
@@ -66,6 +67,20 @@ body {
 
 main#content {
   margin-bottom: $jumbotron-padding;
+}
+
+div#section-nav {
+  line-height: 25px;
+  color: $branding-dark-pink;
+
+  p {
+    text-align: center;
+  }
+
+  a {
+    padding: 0 2px;
+    color: $branding-pink;
+  }
 }
 
 div.jumbotron {
