@@ -58,11 +58,6 @@ body {
     height: 50px;
     margin-bottom: 20px;
   }
-
-  > footer {
-    height: 200px;
-    background-color: $branding-dark-pink;
-  }
 }
 
 main#content {
@@ -112,6 +107,23 @@ div#social {
 
   .icon-google-plus {
     color: $google-color;
+  }
+}
+
+footer#footer {
+  height: 200px;
+  background-color: $branding-dark-pink;
+  color: #eee;
+
+  p.small-print {
+    text-align: right;
+    margin-top: 20px;
+    font-size: small;
+  }
+
+  h6 {
+    font-weight: bold;
+    font-size: 1.1em;
   }
 }
 
