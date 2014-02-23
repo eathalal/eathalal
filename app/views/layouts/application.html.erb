@@ -32,18 +32,7 @@
 <body id="<%= controller_name %>">
 
 <%= render "layouts/navbar" %>  
-
-<header class="container">
-  <div class="row">
-    <div class="col-sm-6">
-      <%= link_to image_tag("logo.png"), root_url %>
-    </div>
-    <div id="section-nav" class="col-sm-6">
-      <%= render "layouts/section_nav" %>    
-    </div>
-  </div>
-  
-</header>
+<%= render "layouts/header" %>
 
 <div class="container">
   <% flash.each do |key, value| %> 
