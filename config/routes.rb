@@ -9,7 +9,9 @@ Eathalal::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'static_pages#welcome'
+  root 'categories#index'
+
+  resources :categories
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
