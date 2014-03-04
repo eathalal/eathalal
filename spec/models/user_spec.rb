@@ -1,5 +1,11 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  before { @user = User.new(email: "fulanibnfulan@example.com", 
+  	password: "secrettt", password_confirmation: "secrettt") }
+  subject { @user }
+
+  it { should be_valid }
+
 end
