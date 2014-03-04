@@ -1,21 +1,28 @@
 <% provide(:title, "Categories") %>
-<% provide(:header, "Categories") %>
+<h1 class="page-header">Categories: Index</h1>
 
 <div class="btn-toolbar">
-  <%= link_to "New", new_admin_category_path, class: "btn btn-success" %>  
+  <%= link_to "New", new_admin_category_path, class: "btn btn-success" %>
 </div>
 
- <div style="clear:both;"></div>
+<div style="clear:both"></div>
 
 <% if @categories.any? %>
-  <table class="table">
-    <tr>
-      <th>#</th>
-      <th>Name</th>
-      <th>Description</th>
-    </tr>
-    <%= render @categories %>
-  </table>
+
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @categories %>
+      </tbody>
+    </table>
+  </div>
 <% else %>
   <p class="alert alert-info">No categories have been added.</p>
 <% end %>
