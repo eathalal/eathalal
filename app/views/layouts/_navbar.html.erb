@@ -1,32 +1,32 @@
 <nav class="navbar navbar-default navbar-static-top" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
+  <!-- <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
       <span class="sr-only">Toggle navigation</span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-  </div>
+  </div> -->
 
   <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav">
-      <li<%=  params['controller'] == 'categories' && action_name == 'index' ? ' class="active"'.html_safe : '' %>>
-        <%= link_to '<span class="glyphicon glyphicon-home"></span>'.html_safe, root_path %>
+  <!-- <div class="collapse navbar-collapse navbar-ex1-collapse"> -->
+    <!-- <ul class="nav navbar-nav">
+      <li<%#=  params['controller'] == 'categories' && action_name == 'index' ? ' class="active"'.html_safe : '' %>>
+        <%#= link_to '<span class="glyphicon glyphicon-home"></span>'.html_safe, root_path %>
       </li>
-      <li<%=  params['controller'] == 'posts' ? ' class="active"'.html_safe : '' %>>
+      <li<%#=  params['controller'] == 'posts' ? ' class="active"'.html_safe : '' %>>
         <%#= link_to "On The Block", blog_path %>
       </li>
       
-    </ul>
+    </ul> -->
 
-    <p class="navbar-text navbar-right">
+    <p class="navbar-text">
       <% if user_signed_in? %>
         Signed in as <em><%= current_user.email %></em>! <%= link_to('Sign out', destroy_user_session_path, :method => :delete, class: "navbar-link") %>
       <% else %>
         <%= link_to("Sign in", new_user_session_path, class: "navbar-link") %> or <%= link_to("Sign up", new_user_registration_path, class: "navbar-link") %>
       <% end %>
     </p>
-  </div><!-- /.navbar-collapse -->
+  <!-- </div>/.navbar-collapse -->
 </nav>
